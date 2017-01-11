@@ -1,0 +1,420 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[xcolor={svgnames},
+hyperref={colorlinks,citecolor=DeepPink4,linkcolor=DarkRed,urlcolor=DarkBlue}
+]{beamer}
+% usually use \usepackage{hyperref} for link coloring, but in this case beamer
+% adds hyperref automatically
+%% still have all of the same options
+
+\mode<presentation> {
+	
+	% The Beamer class comes with a number of default slide themes
+	% which change the colors and layouts of slides. Below this is a list
+	% of all the themes, uncomment each in turn to see what they look like.
+	
+	% \usetheme{default}
+	% \usetheme{AnnArbor}
+	%\usetheme{Antibes}
+	%\usetheme{Bergen}
+	% \usetheme{Berkeley}
+	% \usetheme{Berlin}
+	% \usetheme{Boadilla}
+	% \usetheme{CambridgeUS} % straightforward, grey title bar
+	%\usetheme{Copenhagen}
+	%\usetheme{Darmstadt}
+	%\usetheme{Dresden}
+	%\usetheme{Frankfurt}
+	%\usetheme{Goettingen}
+	%\usetheme{Hannover}
+	%\usetheme{Ilmenau}
+	%\usetheme{JuanLesPins}
+	%\usetheme{Luebeck}
+	% \usetheme{Madrid}
+	%\usetheme{Malmoe}
+	%\usetheme{Marburg}
+	%\usetheme{Montpellier}
+	\usetheme{PaloAlto} % has side progress bar
+	% \usetheme{Pittsburgh}
+	% \usetheme{Rochester}
+	% \usetheme{Singapore}
+	%\usetheme{Szeged}
+	% \usetheme{Warsaw}
+	
+	% As well as themes, the Beamer class has a number of color themes
+	% for any slide theme. Uncomment each of these in turn to see how it
+	% changes the colors of your current slide theme.
+	
+	% \usecolortheme{albatross} % dark blue
+	% \usecolortheme{beaver} % minimalist grey/white
+	% \usecolortheme{beetle}
+	\usecolortheme{crane} % yellow/white
+	% \usecolortheme{dolphin} % more white/blue
+	% \usecolortheme{dove} % very minimal grey/white
+	% \usecolortheme{fly}
+	% \usecolortheme{lily}
+	% \usecolortheme{orchid}
+	% \usecolortheme{rose}
+	% \usecolortheme{seagull} % grey
+	% \usecolortheme{seahorse} % light blue
+	% \usecolortheme{whale}
+	% \usecolortheme{wolverine} % yellow/orange
+	
+	%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+	%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+	
+	%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+% \usepackage{hyperref}
+
+% for denotation function
+\newcommand{\sem}[2][M\!,g]{\mbox{ $[\![ #2 ]\!]^{#1}$}}
+
+% for fancy verbatim options
+\usepackage{fancyvrb}
+
+% For syntax trees
+\usepackage{qtree}
+
+% For glosses
+\usepackage{gb4e}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\title[Short title]{The Joys of \LaTeX} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author{Adam Goodkind} % Your name
+\institute[Northwestern University] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+	Northwestern University \\ % Your institution for the title page
+	\medskip
+	\textit{a.goodkind@u.northwestern.edu} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+%------------------------------------------------
+
+\begin{document}
+	
+	\begin{frame}
+		\titlepage % Print the title page as the first slide
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Our Path Today} % Table of contents slide, comment this block out to remove it
+		\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+	\end{frame}
+	
+	%----------------------------------------------------------------------------------------
+	%	PRESENTATION SLIDES
+	%----------------------------------------------------------------------------------------
+	
+	%------------------------------------------------
+	\section{Overview of \LaTeX} % All sections/subsections automatically added to Table of Contents
+	\subsection{Why \LaTeX?} 
+	%------------------------------------------------
+	\begin{frame}
+		\frametitle{Why \LaTeX}
+		Portability of Code
+		\begin{itemize}
+			\item <1-> Overleaf.com has made real-time / collaboration simple
+			\item <2-> Easy to transfer between templates, layouts and operating systems
+			\begin{itemize}
+				\item \textbf{What You See Is What You Get...Everywhere!}
+			\end{itemize}
+			\item <3-> All code is just ASCII text
+		\end{itemize}
+		Logistics
+		\begin{itemize}
+			\item <4-> No need to worry about typesetting itself
+			\item <5-> Content and layout are kept separate
+			\item <6-> No need to worry about where to place figures
+			\item <7-> Dynamic section, figure, item numbering etc.
+			\item <8-> Citations are automatically added to bibliographies
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	\subsection{Why Not \LaTeX?}
+	%------------------------------------------------
+	\begin{frame}
+		\frametitle{Why Not \LaTeX}
+		Learning Curve
+		\begin{itemize}
+			\item <2-> \LaTeX\ is a Turing-complete programming language
+			\item <3-> For very (very!) short and straightforward writing, may not be worth overhead
+		\end{itemize}
+		Tables
+		\begin{itemize}
+			\item <4-> Tables are a bitch
+			\item <5-> Merging/splitting cells can be difficult
+			\item <6-> BUT as with everything \LaTeX, extensive online support
+		\end{itemize}
+		Aesthetics
+		\begin{itemize}
+			\item <7-> Picture placement/sizing can be tricky
+			\item <8-> \LaTeX\ has its fair share of quirks
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	\subsection{A Few \LaTeX\ Features}
+	%------------------------------------------------
+	\begin{frame}[fragile]
+		\frametitle{A Few \LaTeX\ Features}
+		\begin{itemize}
+			\item Very easy to change formats (slide template demo)
+			\begin{itemize}
+				\item Columns / Format
+				\item Line Numbers
+				\item Journal Template 		 (\url{https://www.overleaf.com/7657746tdydxffysqjg\#/26800114/})
+			\end{itemize}
+			\item <2-> Dynamic numbering!!
+			\item <3-> Equations and symbols (+Blocks +Verbatim)
+			
+			\begin{block}<3-> {Example of Denotation Function}
+				\begin{Verbatim}[fontsize=\small]
+				\usepackage{stmaryrd}
+				% or 
+				\newcommand{\sem}[2][M\!,g]{\mbox{ $[\![ #2 ]\!]^{#1}$}}
+				\sem[M',g]{walks}
+				\end{Verbatim}
+			\end{block}
+			becomes
+			$\sem[M',g]{walks}$
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	%------------------------------------------------
+	\begin{frame}[fragile]
+		\frametitle{Tables}
+		\begin{block}{Tables can be tricky}
+			\begin{columns}
+				\begin{column}{0.4\textwidth}
+					\begin{Verbatim}[fontsize=\small]
+					\begin{table}[]
+					\caption{My caption}
+					\label{my-label}
+					\begin{tabular}{ll}
+					Name     & Date   \\
+					Adam     & 1/1/17 \\
+					Bob      & 1/2/16 \\
+					Charlie & 1/3/15
+					\end{tabular}
+					\end{table}
+					\end{Verbatim}
+				\end{column}
+				\begin{column}{0.4\textwidth}
+					\begin{table}[]
+						\caption{My caption}
+						\label{tbl:my-label}
+						\begin{tabular}{|l|c|}
+							Name     & Date   \\
+							Adam     & 1/1/17 \\
+							Bob      & 1/2/16 \\
+							Charlie & 1/3/15
+						\end{tabular}
+					\end{table}
+				\end{column}
+			\end{columns}
+		\end{block}
+		
+		\begin{itemize}
+			\item Lots of tables at \url{http://www.tablesgenerator.com/}
+			\item Tables can be made from Python and R adataframes
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	\section{Bibliography/ Reference Management}
+	\subsection{BibTeX and Biber}
+	%------------------------------------------------
+	\begin{frame}[fragile]
+		\frametitle{From PDF to citation}
+		Adding an article from Google Scholar is simple
+		\begin{itemize}
+			\item Copy the BibTeX key
+			\item Paste the key into JabRef
+			\item Download the PDF and rename it with the citation key
+			\item Add the BibTeX key to the BibTeX file
+		\end{itemize}
+		
+		\begin{block}<2-> {Easy Citations}
+			Typing the \verb|\cite| command within \LaTeX:\\~
+			\verb|This statement requires citation \cite{p1}.| \\
+			Automatically produces
+			\begin{itemize}
+				\item This statement requires citation \cite{p1}.
+				\item And adds it to the bibliography
+			\end{itemize}
+			\footnotesize{
+				\begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+					\bibitem[Smith, 2012]{p1} John Smith (2012)
+					\newblock Title of the publication
+					\newblock \emph{Journal Name} 12(3), 45 -- 678.
+				\end{thebibliography}
+			}
+		\end{block}
+	\end{frame}
+	%------------------------------------------------
+	
+	\subsection{Mendeley, Zotero and Biber}
+	%------------------------------------------------
+	\begin{frame}
+		\frametitle{Mendeley, Zotero and Biber}
+		\begin{itemize}
+			\item Mendeley, Zotero, EndNote etc. all support BibTeX
+			\item Changing reference styles can be done with a single line
+			\item Supposed to use \texttt{biber} instead now
+			\begin{itemize}
+				\item Offers more stability
+				\item Supports more character types
+				\item Doesn't work with all bibliography packages, such as \texttt{natbib}
+			\end{itemize}
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	\section{Presentations and Posters}
+	\subsection{Beamer/Tikz}
+	%------------------------------------------------
+	\begin{frame}
+		\frametitle{Posters and Presentations}
+		\begin{itemize}
+			\item Going between presentations and posters is easy
+			\item Can use tikz and beamer packages
+			\item A slide is a block
+			\item Useful if including lots of technical details
+			\item Not always useful for more straightforward presentations
+			\item But often less headaches than Microsoft
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	\section{\LaTeX\ for Linguists}
+	
+	%------------------------------------------------
+	\begin{frame}[fragile]
+		\frametitle{\LaTeX\ For Linguists}
+		\textbf{\underline{Lots}} of resources for linguists \\
+		\verb|\includegraphics[scale=0.2]{LatexForLinguists.png}|
+		\includegraphics[scale=0.2]{LatexForLinguists.png}
+	\end{frame}
+	%------------------------------------------------
+	
+	\subsection{Trees}
+	%------------------------------------------------
+	\begin{frame}[fragile]
+		\frametitle{Easy Tree Diagrams}
+		This code:
+		\begin{Verbatim}
+		\usepackage{qtree}
+		\Tree [.S 
+		[.NP LaTeX ] 
+		[.VP [.V is ] [.NP fun ] ] ]
+		\end{Verbatim}
+		Produces:\\
+		\Tree [.S [.NP LaTeX ] [.VP [.V is ] [.NP fun ] ] ]
+	\end{frame}
+	%------------------------------------------------
+	
+	\subsection{Symbols}
+	%------------------------------------------------
+	\begin{frame}
+		\frametitle{Lots of Pretty Math}
+		Sets \\
+		\includegraphics[scale=0.6]{sets.png} \\
+		Symbols \\
+		\includegraphics[scale=0.4]{symbols.png} \\
+		Greek Letters \\
+		\includegraphics[scale=0.5]{greek.png}
+	\end{frame}
+	%------------------------------------------------
+	
+	\subsection{Glosses}
+	%------------------------------------------------
+	\begin{frame}[fragile]
+		\frametitle{Glosses and Numbering Are Super Easy}
+		\begin{itemize}
+			\item Example numbers can be continued throughout a document, and modified on-the-fly
+			\item Aligning glosses is easy
+			\begin{Verbatim}[fontsize=\small]
+			\usepackage{gb4e}
+			\begin{exe}
+			\ex
+			\gll Stolz ist er auf seine Kinder gewesen. \\
+			proud is he of his children been\\
+			\trans `He was proud of his children.'
+			\end{exe}
+			\end{Verbatim}
+			\begin{exe}
+				\ex
+				\gll Stolz ist er auf seine Kinder gewesen. \\
+				proud is he of his children been\\
+				\trans `He was proud of his children.'
+			\end{exe}
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	\section{Extensive Online Support}
+	
+	%------------------------------------------------
+	\begin{frame}
+		\frametitle{Support is Everywhere!}
+		\begin{itemize}
+			\item Ask Anything (General Support)
+			\begin{itemize}
+				\item \url{tex.stackexchange.com}
+				\item \url{reddit.com/r/LaTeX}
+				\item \url{en.wikibooks.org/wiki/LaTeX}
+			\end{itemize}
+			\item For Linguists
+			\begin{itemize}
+				\item \tiny{\url{http://www.essex.ac.uk/linguistics/external/clmt/latex4ling/}}
+				\item \tiny{\url{https://en.wikibooks.org/wiki/LaTeX/Linguistics}}
+			\end{itemize}
+			\item Symbols Galore (Complete Lists)
+			\begin{itemize}
+				\item \tiny{\url{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}}
+				\item Draw! \tiny{\url{http://detexify.kirelabs.org/classify.html}}
+				\item Pretty \tiny{\url{http://zelmanov.ptep-online.com/ctan/symbols.pdf}}
+			\end{itemize}
+			\item Table Generator \url{http://www.tablesgenerator.com/}
+			\item Task Management with \href{http://mirrors.ibiblio.org/CTAN/macros/latex/contrib/todonotes/todonotes.pdf}{todonotes}
+		\end{itemize}
+	\end{frame}
+	%------------------------------------------------
+	
+	%------------------------------------------------
+	\begin{frame}
+		\Huge{\centerline{The End}}
+		\vfill
+		\begin{center}
+			\footnotesize{Slides \& code available at}
+			\footnotesize{\url{https://github.com/angoodkind/LaTeXTutorial}}
+		\end{center}
+	\end{frame}
+	
+	%------------------------------------------------
+	
+\end{document}
